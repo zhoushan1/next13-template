@@ -9,7 +9,9 @@ export default function Index() {
 
   return (
     <div>
-      <button className="btn btn-primary" onClick={handleClick}>Button</button>
+      <button className="btn btn-primary" onClick={handleClick}>
+        Button
+      </button>
       <div>about页面</div>
     </div>
   );
