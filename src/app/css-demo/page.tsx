@@ -39,7 +39,12 @@ export default function Index() {
           打开Modal
         </button>
       </div>
-      <Modal visible={visible} onCancel={() => setVisible(false)} title="标题">
+      <Modal
+        visible={visible}
+        onCancel={() => setVisible(false)}
+        title="标题"
+        footer={null}
+      >
         这是测试内容
       </Modal>
     </Container>

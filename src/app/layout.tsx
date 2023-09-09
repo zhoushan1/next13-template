@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { MessageProvider } from '@/components/message';
+import cx from 'clsx';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={cx(inter.className, 'min-h-screen')}>
         <MessageProvider>
           <CustomLayout>{children}</CustomLayout>
         </MessageProvider>

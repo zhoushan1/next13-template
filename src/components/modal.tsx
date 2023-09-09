@@ -6,6 +6,7 @@ interface Props {
   onCancel?: () => void;
   children: React.ReactNode;
   title?: React.ReactNode | string;
+  footer?: React.ReactNode;
 }
 
 export default function Modal({
@@ -14,7 +15,40 @@ export default function Modal({
   onCancel,
   children,
   title,
+  footer,
 }: Props) {
+  const renderFooter = () => {
+    if (footer === null) {
+      return null;
+    }
+    return (
+      <div className="mt-5 flex  items-center gap-3 border-t p-4">
+        {footer ? (
+          footer
+        ) : (
+          <>
+            <button
+              className="rounded-md bg-indigo-600 px-6 py-2 text-white outline-none ring-indigo-600 ring-offset-2 focus:ring-2"
+              onClick={() => {
+                onOk?.();
+              }}
+            >
+              Accept
+            </button>
+            <button
+              className="rounded-md border px-6 py-2 text-gray-800 outline-none ring-indigo-600 ring-offset-2 focus:ring-2"
+              onClick={() => {
+                onCancel?.();
+              }}
+            >
+              Cancel
+            </button>
+          </>
+        )}
+      </div>
+    );
+  };
+
   return visible ? (
     <div className="fixed inset-0 z-10 overflow-y-auto">
       <div
@@ -50,24 +84,7 @@ export default function Modal({
           <div className="mt-3 space-y-2 p-4 text-[15.5px] leading-relaxed text-gray-500">
             {children}
           </div>
-          <div className="mt-5 flex items-center gap-3 border-t p-4">
-            <button
-              className="rounded-md bg-indigo-600 px-6 py-2 text-white outline-none ring-indigo-600 ring-offset-2 focus:ring-2"
-              onClick={() => {
-                onOk?.();
-              }}
-            >
-              Accept
-            </button>
-            <button
-              className="rounded-md border px-6 py-2 text-gray-800 outline-none ring-indigo-600 ring-offset-2 focus:ring-2"
-              onClick={() => {
-                onCancel?.();
-              }}
-            >
-              Cancel
-            </button>
-          </div>
+          {renderFooter()}
         </div>
       </div>
     </div>
