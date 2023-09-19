@@ -2,7 +2,7 @@ import CustomLayout from '@/components/layout';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { MessageProvider } from '@/components/message';
+import { MessageProvider } from '@/components/ui/Message';
 import cx from 'clsx';
 
 const inter = Inter({ subsets: ['latin'] });

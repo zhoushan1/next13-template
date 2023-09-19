@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Container from '@/components/container';
-import { useMessage } from '@/components/message';
-import Modal from '@/components/modal';
+import { useMessage } from '@/components/ui/Message';
+import Modal from '@/components/ui/Modal';
 
 export default function Index() {
   const message = useMessage();
@@ -15,7 +15,7 @@ export default function Index() {
   return (
     <Container>
       <div className="w-[200px]">
-        <div className="line-clamp-2 text-secondary">
+        <div className="text-secondary line-clamp-2">
           <span>这是一段文本</span>
           <span>这是一段文本</span>
           <span>这是一段文本</span>
