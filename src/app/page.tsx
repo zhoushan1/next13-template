@@ -4,6 +4,23 @@ import { useState } from 'react';
 import Container from '@/components/container';
 import { useMessage } from '@/components/ui/Message';
 import Modal from '@/components/ui/Modal';
+import Select from '@/components/ui/Select';
+
+const MySelect = () => {
+  const [value, setValue] = useState<string | number>(1);
+
+  const people = [
+    { label: 'Wade Cooper', value: 1 },
+    { label: 'Arlene Mccoy', value: 2 },
+    { label: 'Devon Webb', value: 3 },
+    { label: 'Tom Cook', value: 4 },
+    { label: 'Tanya Fox', value: 5 },
+    { label: 'Hellen Schmidt', value: 6 },
+  ];
+  return (
+    <Select options={people} value={value} onChange={(val) => setValue(val)} />
+  );
+};
 
 export default function Home() {
   const message = useMessage();
@@ -39,6 +56,9 @@ export default function Home() {
         >
           打开Modal
         </button>
+      </div>
+      <div className="mt-10">
+        <MySelect />
       </div>
       <Modal
         visible={visible}
