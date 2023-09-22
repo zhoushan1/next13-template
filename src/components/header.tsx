@@ -6,15 +6,15 @@ export default function Index() {
 
   // Replace javascript:void(0) path with your path
   const navigation = [
-    { title: 'Partners', path: 'javascript:void(0)' },
-    { title: 'Customers', path: 'javascript:void(0)' },
-    { title: 'Team', path: 'javascript:void(0)' },
+    { title: 'Partners', path: '' },
+    { title: 'Customers', path: '' },
+    { title: 'Team', path: '' },
   ];
 
   return (
     <nav className="relative mx-auto max-w-screen-xl items-center px-4 pt-5 sm:px-8 md:flex md:space-x-6">
       <div className="flex justify-between">
-        <a href="javascript:void(0)">
+        <a href="">
           <img
             src="https://www.floatui.com/logo.svg"
             width={120}
@@ -75,7 +75,7 @@ export default function Index() {
         </div>
         <li className="order-2 py-5 md:py-0">
           <a
-            href="javascript:void(0)"
+            href=""
             className="block rounded-lg bg-indigo-600 px-5 py-2 text-center font-medium text-white duration-150 hover:bg-indigo-500 active:bg-indigo-700 md:inline md:py-3"
           >
             Get started

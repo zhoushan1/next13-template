@@ -143,7 +143,7 @@ const Message = ({ message, type, onClose }: MessageOption) => {
 
   return (
     <div
-      id="toast-success"
+      id="toast-container"
       className="fixed right-8 top-4 z-[9999] mb-4 flex w-full max-w-xs items-center rounded-lg bg-white p-4 text-gray-500 shadow"
       role="alert"
     >
@@ -189,6 +189,7 @@ export const MessageProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     if (showModal) {
+      // @ts-ignore
       timerRef.current = setTimeout(() => {
         setShowModal(false);
       }, messageOption.duration);
