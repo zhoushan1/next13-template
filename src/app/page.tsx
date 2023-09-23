@@ -5,6 +5,7 @@ import Container from '@/components/container';
 import { useMessage } from '@/components/ui/Message';
 import Modal from '@/components/ui/Modal';
 import Select from '@/components/ui/Select';
+import ModalHeadless from '@/components/ui/ModalHeadless';
 
 const MySelect = () => {
   const [value, setValue] = useState<string | number>(1);
@@ -19,6 +20,29 @@ const MySelect = () => {
   ];
   return (
     <Select options={people} value={value} onChange={(val) => setValue(val)} />
+  );
+};
+
+const MyModalHeadless = () => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <div className="mt-10">
+      <button
+        className="rounded-lg bg-indigo-600 px-4 py-2 text-white duration-150 hover:bg-indigo-700 active:shadow-lg"
+        onClick={() => {
+          setVisible(true);
+        }}
+      >
+        打开headlessModal
+      </button>
+      <ModalHeadless
+        visible={visible}
+        onClose={() => setVisible(false)}
+        title="测试title"
+      >
+        <div>这是一段测试岑日</div>
+      </ModalHeadless>
+    </div>
   );
 };
 
@@ -60,6 +84,7 @@ export default function Home() {
       <div className="mt-10">
         <MySelect />
       </div>
+      <MyModalHeadless />
       <Modal
         visible={visible}
         onCancel={() => setVisible(false)}
