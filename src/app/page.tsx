@@ -6,6 +6,27 @@ import { useMessage } from '@/components/ui/Message';
 import Modal from '@/components/ui/Modal';
 import Select from '@/components/ui/Select';
 import ModalHeadless from '@/components/ui/ModalHeadless';
+import SearchSelect from '@/components/ui/SearchSelect';
+
+const MySearchSelect = () => {
+  const [value, setValue] = useState<string | number>('');
+
+  const people = [
+    { label: 'Wade Cooper', value: 1 },
+    { label: 'Arlene Mccoy', value: 2 },
+    { label: 'Devon Webb', value: 3 },
+    { label: 'Tom Cook', value: 4 },
+    { label: 'Tanya Fox', value: 5 },
+    { label: 'Hellen Schmidt', value: 6 },
+  ];
+  return (
+    <SearchSelect
+      options={people}
+      value={value}
+      onChange={(val) => setValue(val)}
+    />
+  );
+};
 
 const MySelect = () => {
   const [value, setValue] = useState<string | number>(1);
@@ -83,6 +104,9 @@ export default function Home() {
       </div>
       <div className="mt-10">
         <MySelect />
+      </div>
+      <div className="mt-10">
+        <MySearchSelect />
       </div>
       <MyModalHeadless />
       <Modal
