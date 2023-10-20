@@ -1,6 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), An engineering template based on next13, including basic components, without introducing additional packages, including eslint and prettier configuration
 
-基于next13的项目模版，包含基础组件和常用tslint,prettier工程化配置，开箱即用，0添加
+## Create your own project based on this template by running
+
+```javascript
+npx degit zhoushan1/next13-template your-project
+```
 
 ## Getting Started
 

@@ -1,8 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
-import cx from 'clsx';
-import { isEmpty } from '@/utils/commonTool';
+import { isEmpty, cn } from '@/utils/common';
 
 export type ValueProp = string | number;
 
@@ -31,7 +30,7 @@ export default function Select({ className, options, value, onChange }: Props) {
   }, [value]);
 
   return (
-    <div className={cx('w-72', className)}>
+    <div className={cn('w-72', className)}>
       <Listbox
         value={selectedOption}
         onChange={(op) => {
@@ -43,7 +42,7 @@ export default function Select({ className, options, value, onChange }: Props) {
       >
         <div className="relative mt-1">
           <Listbox.Button
-            className={cx(
+            className={cn(
               'relative h-10 w-full cursor-default rounded-lg border bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm'
             )}
           >

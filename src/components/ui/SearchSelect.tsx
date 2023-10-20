@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { OptionProp, ValueProp } from './Select';
-import cx from 'clsx';
+import { cn } from '@/utils/common';
 
 interface Props {
   className?: string;
@@ -34,7 +34,7 @@ export default function SearchSelect({
         });
 
   return (
-    <div className={cx('w-72', className)}>
+    <div className={cn('w-72', className)}>
       <Combobox
         value={curSelectOption}
         onChange={(op) => {
