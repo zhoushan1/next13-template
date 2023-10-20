@@ -67,7 +67,7 @@ export default function ModalHeadless({
                 </Dialog.Title>
                 <Dialog.Description>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">{children}</p>
+                    <div className="text-sm text-gray-500">{children}</div>
                   </div>
                 </Dialog.Description>
                 <div className="mt-4">
